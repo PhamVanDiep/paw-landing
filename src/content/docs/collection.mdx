@@ -1,0 +1,18 @@
+Một Azure DevOps Server có thể có nhiều collection. PAW mặc định chỉ đồng bộ collection mặc định.
+
+## Theo dõi thêm collection
+
+1. Đảm bảo [PAT](/docs/lay-pat) được tạo với **All accessible organizations**.
+2. Vào **Cài đặt**, mục **Collection theo dõi**.
+3. Tick các collection muốn đồng bộ, bấm **Lưu collection**.
+
+Danh sách lấy từ server theo quyền của PAT. Nếu app báo PAT chỉ có quyền trong một collection, hãy tạo PAT mới như hướng dẫn trên rồi bấm **Cập nhật PAT**.
+
+## Cách hiển thị
+
+Ở mọi nơi, project hiện dạng `Collection/Project`. Mapping thư mục cũng theo cặp này, nên hai project cùng tên ở hai collection vẫn tách biệt.
+
+## Khi bỏ chọn hoặc gặp lỗi
+
+- Bỏ chọn một collection thì việc của nó không hiện nữa. Dữ liệu và mapping vẫn được giữ, chọn lại là có lại.
+- Collection nào đồng bộ lỗi thì lỗi hiện ngay dưới tên nó. Các collection khác vẫn chạy bình thường.

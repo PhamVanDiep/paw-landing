@@ -1,0 +1,21 @@
+## Bắt đầu
+
+1. Trên **Board**, chọn một thẻ của project đã map. Kéo thẻ sang cột **Đang thực hiện**, hoặc bấm **Bắt đầu chạy** nếu thẻ có nút này.
+2. Hộp thoại **Bắt đầu làm** hiện ra:
+   - **Nhánh gốc**: gõ để lọc danh sách nhánh. Để trống là dùng nhánh hiện tại của repo.
+   - **Skill dùng thêm**: chọn nếu muốn Claude dùng thêm skill có trên máy.
+3. Bấm **Bắt đầu**. PAW nhớ lựa chọn này theo project.
+
+Nếu thư mục còn thay đổi chưa commit, PAW hiện danh sách file. Việc chỉ chạy khi bạn chọn **Vẫn chạy**.
+
+## Làm việc cùng Claude
+
+Mở thẻ để xem terminal. Claude tạo hoặc checkout nhánh `feature/<id>-<tiêu-đề>` rồi bắt đầu làm. Khi cần quyền hoặc có câu hỏi, thẻ chuyển sang cột **Chờ bạn** và bạn nhận được thông báo. Bạn trả lời ngay trong terminal.
+
+Claude chỉ commit và push khi bạn đồng ý.
+
+## Kết thúc
+
+Kéo thẻ sang **Đã xong** và xác nhận. PAW chuyển work item sang trạng thái xong của loại đó trên Azure DevOps. Nếu thẻ còn phiên Claude thì phiên bị dừng.
+
+Nếu Azure DevOps từ chối, ví dụ thiếu field bắt buộc, trạng thái không đổi và phiên Claude vẫn chạy tiếp để bạn xử lý.

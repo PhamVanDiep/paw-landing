@@ -1,0 +1,16 @@
+PAW đọc luật workflow và công cụ Azure DevOps từ plugin này. Thiếu plugin thì app không kết nối được Azure DevOps. Chạy các lệnh sau một lần, trong terminal:
+
+```bash
+claude plugin marketplace add PhamVanDiep/pmis3-skills
+claude plugin install pmis3-workflow@pmis3-skills
+claude plugin install pmis3-frontend@pmis3-skills
+claude plugin install pmis3-backend@pmis3-skills
+```
+
+Kiểm tra lại bằng lệnh:
+
+```bash
+claude plugin list
+```
+
+PAW tự tìm plugin, không cần khai báo gì thêm. Nếu app đang mở, bạn cũng không cần khởi động lại.

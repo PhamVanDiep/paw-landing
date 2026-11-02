@@ -1,0 +1,37 @@
+PAW dùng chính lệnh `claude` trên máy bạn và không lưu token Claude nào. Bạn cần một tài khoản Claude có quyền dùng Claude Code.
+
+## Cài Claude Code
+
+Trên Windows, mở PowerShell:
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+Trên macOS và Ubuntu:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+Hướng dẫn đầy đủ nằm ở [tài liệu Claude Code](https://code.claude.com/docs).
+
+## Đăng nhập
+
+Mở terminal, chạy lệnh dưới đây và làm theo hướng dẫn trên màn hình:
+
+```bash
+claude
+```
+
+Khi thấy dấu nhắc của Claude là đã đăng nhập xong. Gõ `/exit` để thoát.
+
+## Kiểm tra trong PAW
+
+Vào **Cài đặt**, mục **Claude**, bấm **Kiểm tra Claude**. App hiện đường dẫn và phiên bản `claude` tìm được.
+
+Nếu app báo không tìm thấy lệnh `claude`, hãy thoát hẳn PAW từ khay hệ thống rồi mở lại. App lấy `PATH` từ shell đăng nhập của bạn, nên cần mở lại sau khi cài.
+
+## Chọn model
+
+Ô **Model** trong cùng mục để trống thì dùng model mặc định của Claude Code.

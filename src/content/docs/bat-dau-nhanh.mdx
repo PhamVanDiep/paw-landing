@@ -1,0 +1,17 @@
+import { Checklist } from "@/components/checklist";
+
+Tick từng bước khi làm xong. Trình duyệt này sẽ nhớ tiến độ của bạn.
+
+<Checklist
+  steps={[
+    { id: "app", title: "Cài PAW", detail: "Tải bộ cài và mở app lần đầu.", href: "/docs/cai-dat-app" },
+    { id: "claude", title: "Cài Claude Code và đăng nhập", detail: "Chạy claude trong terminal một lần để đăng nhập.", href: "/docs/claude-code" },
+    { id: "plugin", title: "Cài plugin", detail: "Chạy bốn lệnh cài plugin mà PAW cần.", href: "/docs/plugin" },
+    { id: "pat", title: "Tạo PAT và nhập vào app", detail: "PAT cần quyền Work Items (Read & Write).", href: "/docs/lay-pat" },
+    { id: "map", title: "Map project với thư mục", detail: "Gắn project Azure DevOps với thư mục đã clone.", href: "/docs/map-thu-muc" },
+  ]}
+/>
+
+## Sau năm bước này
+
+Việc của bạn đã hiện trên board. Sang [Chạy work item đầu tiên](/docs/work-item-dau-tien) để chạy thử.

@@ -1,0 +1,21 @@
+## Dữ liệu nằm ở đâu
+
+Cơ sở dữ liệu, log phiên Claude và khóa mã hóa đều nằm trên máy bạn:
+
+| Hệ điều hành | Thư mục |
+| --- | --- |
+| Windows | `%APPDATA%\PMIS Auto Work` |
+| macOS | `~/Library/Application Support/PMIS Auto Work` |
+| Ubuntu | `~/.config/PMIS Auto Work` |
+
+PAT và token Telegram được lưu mã hóa AES-256-GCM. PAW không sửa `~/.claude` của bạn.
+
+## Cập nhật app
+
+PAW tự kiểm tra bản mới lúc mở và mỗi giờ, rồi tải về chạy ngầm. Tải xong, app hỏi một lần có khởi động lại không.
+
+Nếu chọn **Để sau**, bạn có thể bấm **Khởi động lại để cập nhật** trong menu khay, hoặc bản mới tự cài khi bạn thoát PAW. App không bao giờ tự khởi động lại, và vẫn hỏi trước nếu còn phiên Claude đang chạy.
+
+## Đồng bộ
+
+PAW lấy việc từ Azure DevOps theo chu kỳ đặt ở **Cài đặt**, mục **Chu kỳ đồng bộ**, từ 30 đến 3600 giây. Nút **Làm mới** trên board đồng bộ ngay.

@@ -1,0 +1,31 @@
+PAT (Personal Access Token) là khóa để PAW đọc và cập nhật work item thay bạn.
+
+## Tạo PAT
+
+1. Mở `https://devops.evn.com.vn` và đăng nhập.
+2. Bấm vào ảnh đại diện hoặc biểu tượng **User settings** ở góc trên bên phải.
+3. Chọn **Personal access tokens** (có phiên bản hiển thị trong mục **Security**).
+4. Bấm **New Token**.
+5. Đặt tên dễ nhớ, ví dụ `PAW`, và chọn ngày hết hạn.
+6. Ở ô **Organization**, chọn **All accessible organizations** nếu bạn được giao việc ở nhiều collection.
+7. Ở **Scopes**, chọn **Custom defined**, rồi tick các quyền bên dưới.
+8. Bấm **Create** và sao chép token ngay. Azure DevOps chỉ hiện token này một lần.
+
+## Quyền cần chọn
+
+| Quyền | Bắt buộc | Dùng để |
+| --- | --- | --- |
+| `Work Items (Read & Write)` | Có | Đọc việc, đổi trạng thái, tạo work item |
+| `Code (Read)` | Không | Gợi ý danh sách nhánh ở ô **Nhánh gốc**. Thiếu quyền này vẫn gõ tay tên nhánh được |
+
+Nếu ở **Scopes** không thấy các quyền này, bấm **Show all scopes**.
+
+## Nhập PAT vào PAW
+
+Mở app, dán token vào ô **Personal Access Token (PAT)** và bấm **Đăng nhập**. PAT được lưu mã hóa trên máy bạn.
+
+Khi PAT hết hạn hoặc cần đổi, vào **Cài đặt**, mục **Tài khoản Azure DevOps**, bấm **Cập nhật PAT**.
+
+<Note>
+PAT chỉ tạo cho một collection thì PAW chỉ làm việc được với collection mặc định. Muốn theo dõi nhiều [collection](/docs/collection), hãy tạo lại PAT với **All accessible organizations**.
+</Note>

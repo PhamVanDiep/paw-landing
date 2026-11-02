@@ -1,0 +1,37 @@
+Chọn chế độ ở **Cài đặt**, mục **Chế độ chạy**.
+
+## Lần lượt
+
+Đây là chế độ mặc định. Mỗi lúc chỉ chạy một việc, các việc khác xếp hàng.
+
+## Song song
+
+Chạy tối đa N việc cùng lúc, N từ 1 đến 8. Mỗi thư mục project chỉ chạy một việc:
+
+- Việc cùng thư mục xếp hàng chờ việc trước xong, kể cả khi hai project map chung một thư mục.
+- Việc ở thư mục khác chạy ngay nếu còn chỗ.
+- Một thư mục và thư mục con của nó được tính là trùng.
+
+## Chạy theo lô
+
+Chọn nhiều thẻ trên board và bấm **Thực thi**. Mỗi project có một phiên Claude duy nhất cho tất cả thẻ đã chọn của nó, làm lần lượt theo thứ tự trên board, chung một nhánh `feature/<id1>-<id2>-…`.
+
+## Trạng thái của một phiên
+
+| Trạng thái | Ý nghĩa |
+| --- | --- |
+| **Đang chạy** | Claude đang làm |
+| **Claude đang chờ bạn** | Claude dừng lại, hoặc đang xin quyền |
+| **Trong hàng đợi** | Chờ tới lượt |
+| **Gián đoạn** | App đóng khi phiên đang chạy, hoặc `claude` thoát khi việc chưa xong |
+| **Hoàn tất** | Work item đã đóng trên Azure DevOps |
+
+Phiên bị gián đoạn không giữ thư mục. Bấm **Tiếp tục**, phiên xếp hàng lại và mở lại đúng phiên Claude cũ.
+
+Trang **Tiến trình** liệt kê tất cả các phiên, kèm nút **Hủy** và **Tiếp tục**.
+
+## Quy tắc với code của bạn
+
+- Claude làm trực tiếp trên thư mục đã map và không tự clone.
+- Claude được dặn không bỏ, stash, reset hay ghi đè thay đổi chưa commit của bạn. Gặp trường hợp đó Claude dừng lại hỏi.
+- PAW kiểm tra thay đổi chưa commit lúc xếp hàng và ngay trước khi bắt đầu.

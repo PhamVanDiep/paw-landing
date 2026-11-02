@@ -1,0 +1,30 @@
+Board chỉ hiện work item được gán cho bạn.
+
+## Các cột
+
+| Cột | Ý nghĩa |
+| --- | --- |
+| **Mới được gán** | Việc mới, chưa xử lý |
+| **Sẵn sàng** | Việc bạn đánh dấu định làm, chưa chạy gì |
+| **Đang thực hiện** | Claude đang làm, hoặc việc đang trong hàng đợi |
+| **Chờ bạn** | Claude đã dừng và đang chờ bạn trả lời hoặc cấp quyền |
+| **Đã xong** | Việc đã đóng trên Azure DevOps |
+
+## Kéo thẻ
+
+- Sang **Đang thực hiện**: bắt đầu chạy Claude.
+- Về **Mới được gán** hoặc **Sẵn sàng**: hủy phiên đang có, app hỏi trước khi dừng.
+- Sang **Đã xong**: đóng work item trên Azure DevOps sau khi bạn xác nhận.
+- Không kéo được thẻ vào **Chờ bạn**, cột này do trạng thái của Claude quyết định.
+
+## Lọc và tìm
+
+Bộ lọc **Project** liệt kê mọi project mà PAT nhìn thấy, kèm số việc của bạn. Có thể chọn nhiều project, và lựa chọn được nhớ trên máy. Bạn cũng lọc được theo loại, trạng thái, hoặc tìm theo ID và tiêu đề.
+
+## Thao tác hàng loạt
+
+Chọn nhiều thẻ hoặc **Chọn cả cột**, rồi dùng:
+
+- **Chuyển trạng thái**: chuyển theo cột trên board, hoặc chỉ đổi trạng thái trên Azure DevOps mà không chạy gì.
+- **Gán cho**: gán thẻ cho người khác, có thể kèm ghi chú. Thẻ sẽ rời khỏi board của bạn.
+- **Thực thi**: chạy Claude [theo lô](/docs/che-do-chay).

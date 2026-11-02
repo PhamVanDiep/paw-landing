@@ -1,0 +1,21 @@
+Telegram là tùy chọn, chỉ dùng để nhận thông báo và bản tóm tắt. Bạn không duyệt được thao tác của Claude từ Telegram.
+
+## Lấy token và chat ID
+
+1. Chat với `@BotFather` trên Telegram, gửi `/newbot` và làm theo hướng dẫn để lấy token bot.
+2. Nhắn một tin bất kỳ cho bot của bạn.
+3. Mở địa chỉ dưới đây trong trình duyệt, thay `<TOKEN>` bằng token vừa lấy, rồi tìm giá trị `chat.id`:
+
+```text
+https://api.telegram.org/bot<TOKEN>/getUpdates
+```
+
+## Nhập vào PAW
+
+Vào **Cài đặt**, mục **Telegram**, nhập **Bot token** và **Chat ID**, rồi bấm **Gửi thử**. Token được lưu mã hóa trên máy.
+
+## Tạm tắt thông báo
+
+Tắt công tắc **Gửi thông báo qua Telegram** để ngừng mọi tin, kể cả bản tóm tắt, mà không cần xóa token.
+
+Popup của hệ điều hành bật hoặc tắt riêng bằng **Hiện thông báo trên máy** ở mục **Ứng dụng máy tính**. Tắt cả hai thì thông báo vẫn nằm trong danh sách chuông của app.

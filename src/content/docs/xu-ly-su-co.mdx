@@ -1,0 +1,39 @@
+## Không kết nối được khi nhập PAT
+
+Có ba nguyên nhân hay gặp:
+
+- Chưa cài plugin: xem [Plugin bắt buộc](/docs/plugin). Lỗi này thường có chữ `config_missing`.
+- PAT sai, hết hạn hoặc thiếu quyền: [tạo lại PAT](/docs/lay-pat).
+- Máy chưa vào được mạng tới `devops.evn.com.vn`: kiểm tra mạng hoặc VPN.
+
+## Không tìm thấy lệnh claude
+
+Cài [Claude Code](/docs/claude-code), thoát hẳn PAW từ khay hệ thống rồi mở lại.
+
+## Thẻ báo Chưa map thư mục
+
+Project của thẻ chưa có thư mục. Xem [Map project với thư mục](/docs/map-thu-muc).
+
+## Thư mục còn thay đổi chưa commit
+
+Commit hoặc cất thay đổi của bạn rồi chạy lại. Nếu chắc chắn muốn tiếp tục, chọn **Vẫn chạy**.
+
+## Việc nằm mãi trong hàng đợi
+
+Ở chế độ **Lần lượt**, việc phải chờ việc trước xong. Ở chế độ **Song song**, thư mục của việc có thể đang bị việc khác giữ. Mở trang **Tiến trình** để xem thứ tự.
+
+## Không thấy collection khác
+
+PAT chỉ có quyền ở một collection. Tạo PAT với **All accessible organizations**, xem [Collection](/docs/collection).
+
+## Azure DevOps từ chối chuyển trạng thái
+
+Thường do work item thiếu field bắt buộc. Điền field đó trên Azure DevOps rồi kéo thẻ lại.
+
+## Phiên Claude bị gián đoạn
+
+Bấm **Tiếp tục** trên thẻ hoặc ở trang **Tiến trình** để mở lại đúng phiên cũ.
+
+## Vẫn chưa xử lý được
+
+[Tạo issue](https://github.com/PhamVanDiep/pmis-auto-work-releases/issues) kèm hệ điều hành, phiên bản PAW và thông báo lỗi. Đừng dán PAT hay token vào issue.

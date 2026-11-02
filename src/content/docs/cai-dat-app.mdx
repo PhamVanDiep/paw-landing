@@ -1,0 +1,46 @@
+Tải bộ cài ở [mục Tải về](/#tai-ve) trên trang chủ. Bộ cài hiện chưa được ký số, nên hệ điều hành sẽ cảnh báo khi mở lần đầu. Đây là cảnh báo về chữ ký, cách xử lý ở từng mục bên dưới.
+
+## Windows
+
+1. Chạy file `PAW-Setup-<phiên bản>.exe`.
+2. Nếu SmartScreen hiện **Windows protected your PC**, bấm **More info**, rồi **Run anyway**.
+3. Làm theo trình cài đặt và mở PMIS Auto Work.
+
+<Note>
+Nếu phần mềm diệt virus của máy chặn hoặc cách ly file cài, hãy nhờ bộ phận quản trị máy cho phép file đó.
+</Note>
+
+## macOS
+
+Chọn đúng bản: **Apple Silicon** cho máy chip M, **Intel** cho máy chip Intel. Mở file `.dmg` và kéo app vào **Applications**.
+
+Từ macOS 15 (Sequoia) trở đi:
+
+1. Mở app. macOS báo không mở được, bấm **Done**.
+2. Vào **System Settings**, mục **Privacy & Security**.
+3. Kéo xuống dưới, bấm **Open Anyway** rồi xác nhận.
+
+Với macOS 14 trở về trước: chuột phải vào app, chọn **Open**, rồi **Open** lần nữa.
+
+## Ubuntu
+
+Bản `.deb` cài được bằng lệnh:
+
+```bash
+sudo apt install ./PAW-<phiên bản>-amd64.deb
+```
+
+Bản AppImage chạy trực tiếp, không cần cài:
+
+```bash
+chmod +x PAW-*.AppImage
+./PAW-*.AppImage
+```
+
+<Note>
+PAW cất khóa mã hóa bằng keyring của hệ điều hành. Nếu máy không có GNOME Keyring hoặc KWallet, app vẫn chạy nhưng khóa nằm trong file thường `app-secret.txt` (quyền 600). Cài và mở khóa keyring nếu muốn được mã hóa thật sự.
+</Note>
+
+## Sau khi cài
+
+Đóng cửa sổ chỉ ẩn PAW xuống khay hệ thống. Muốn thoát hẳn, dùng menu ở khay. Bạn có thể bật tự khởi động cùng hệ điều hành trong **Cài đặt**.

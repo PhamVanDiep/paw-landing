@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --paper: #f4f7fc;
+  --surface: #ffffff;
+  --ink: #10244f;
+  --muted: #4c5d7d;
+  --line: #d6e0ef;
+  --navy: #1b3a8c;
+  --blue: #2a6fb8;
+  --amber: #d9822b;
+  --amber-text: #a85a12;
+  --tint: #e6eefa;
+  --code-bg: #0f1d3d;
+  --code-ink: #e4ecfa;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --paper: #0b1530;
+  --surface: #122040;
+  --ink: #e9f0fc;
+  --muted: #a5b5d1;
+  --line: #283c66;
+  --navy: #8db6f0;
+  --blue: #74a9ea;
+  --amber: #f0a454;
+  --amber-text: #f4b676;
+  --tint: #1a2c55;
+  --code-bg: #081026;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-navy: var(--navy);
+  --color-blue: var(--blue);
+  --color-amber: var(--amber);
+  --color-amber-text: var(--amber-text);
+  --color-tint: var(--tint);
+  --font-sans: var(--font-vietnam);
+  --font-mono: var(--font-jetbrains);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Screenshots exist in both themes; only the one matching the page shows. */
+.only-dark {
+  display: none;
+}
+[data-theme="dark"] .only-dark {
+  display: block;
+}
+[data-theme="dark"] .only-light {
+  display: none;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-primary {
+  background: #1b3a8c;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #15306f;
+}
+[data-theme="dark"] .btn-primary {
+  background: #f0a454;
+  color: #10244f;
+}
+[data-theme="dark"] .btn-primary:hover {
+  background: #f4b676;
+}
+.btn-ghost {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--blue);
+}
+
+/* The rising line of the logo, revealed left to right as the section scrolls in. Browsers without
+   scroll timelines simply show the whole line. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rise-path {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 30% cover 50%;
+    }
+  }
+}
+@keyframes rise {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Long-form docs, written in MDX. */
+.prose-doc {
+  max-width: 72ch;
+}
+.prose-doc h1 {
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.prose-doc h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.prose-doc h3 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.prose-doc p,
+.prose-doc ul,
+.prose-doc ol,
+.prose-doc table {
+  margin-top: 0.8rem;
+}
+.prose-doc ul {
+  list-style: disc;
+  padding-left: 1.3rem;
+}
+.prose-doc ol {
+  list-style: decimal;
+  padding-left: 1.4rem;
+}
+.prose-doc li {
+  margin-top: 0.35rem;
+}
+.prose-doc a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-doc a:hover {
+  color: var(--amber-text);
+}
+.prose-doc :not(pre) > code {
+  padding: 0.1em 0.35em;
+  border-radius: 0.3rem;
+  background: var(--tint);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.88em;
+  overflow-wrap: anywhere;
+}
+.prose-doc table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.prose-doc th,
+.prose-doc td {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.prose-doc th {
+  background: var(--tint);
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn {
+    transition: none;
+  }
+}
