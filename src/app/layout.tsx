@@ -24,7 +24,7 @@ const themeScript = `try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi" suppressHydrationWarning className={`${vietnam.variable} ${jetbrains.variable}`}>
+    <html lang="vi" data-scroll-behavior="smooth" suppressHydrationWarning className={`${vietnam.variable} ${jetbrains.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

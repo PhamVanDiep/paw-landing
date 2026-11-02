@@ -4,6 +4,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  // The page outline reads these with fs, which file tracing cannot see through a computed path.
+  outputFileTracingIncludes: { "/docs/[slug]": ["./src/content/docs/*.mdx"] },
   pageExtensions: ["ts", "tsx", "mdx"],
   turbopack: {
     rules: {
