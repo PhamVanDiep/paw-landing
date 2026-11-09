@@ -12,9 +12,13 @@ PAT và token Telegram được lưu mã hóa AES-256-GCM. PAW không sửa `~/.
 
 ## Cập nhật app
 
-PAW tự kiểm tra bản mới lúc mở và mỗi giờ, rồi tải về chạy ngầm. Tải xong, app hỏi một lần có khởi động lại không.
+PAW tự kiểm tra bản mới lúc mở và mỗi giờ, rồi tải về chạy ngầm. Việc tải không ảnh hưởng các phiên đang chạy, và PAW **không bao giờ tự cài**.
 
-Nếu chọn **Để sau**, bạn có thể bấm **Khởi động lại để cập nhật** trong menu khay, hoặc bản mới tự cài khi bạn thoát PAW. App không bao giờ tự khởi động lại, và vẫn hỏi trước nếu còn phiên Claude đang chạy.
+Tải xong, một biểu tượng cập nhật hiện cạnh số phiên bản ở chân thanh bên (thanh bên thu gọn thì là chấm nhỏ trên logo), menu khay có mục **Cập nhật lên PAW x.y.z**, và bạn nhận một thông báo cho mỗi phiên bản.
+
+Khi tiện, bấm biểu tượng hoặc mục đó. PAW hỏi xác nhận, báo số phiên agent đang chạy sẽ bị dừng (tiếp tục được lần sau); nút **Xem thay đổi** mở trang release. Đồng ý thì PAW cài im lặng rồi tự mở lại. Thoát PAW bình thường không cài gì.
+
+Muốn kiểm tra ngay, bấm vào dòng số phiên bản ở chân thanh bên hoặc **Kiểm tra cập nhật** trong menu khay.
 
 ## Đồng bộ
 
