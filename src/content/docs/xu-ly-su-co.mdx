@@ -2,9 +2,17 @@
 
 Có ba nguyên nhân hay gặp:
 
-- Chưa cài plugin: xem [Plugin bắt buộc](/docs/plugin). Lỗi này thường có chữ `config_missing`.
 - PAT sai, hết hạn hoặc thiếu quyền: [tạo lại PAT](/docs/lay-pat).
 - Máy chưa vào được mạng tới `devops.evn.com.vn`: kiểm tra mạng hoặc VPN.
+- **Địa chỉ Azure DevOps** trong Cài đặt sai: kiểm tra lại ở trang **Tài khoản & DevOps**.
+
+## Thẻ báo Không tự chuyển trạng thái
+
+PAW chưa có [luật trạng thái](/docs/luat-trang-thai) cho loại work item đó. Việc vẫn chạy, chỉ không tự chuyển sang trạng thái đang làm. Tải lên file luật có loại này, hoặc đổi trạng thái tay trên Azure DevOps.
+
+## Kéo sang Đã xong báo chưa có luật
+
+Hộp thoại nêu lý do và cho ba cách xử lý: **Cấu hình luật** (mở mục Luật trạng thái), **Mở trên DevOps** để đổi tay (PAW nhận khi đồng bộ), hoặc **Tải file mẫu**.
 
 ## Không tìm thấy lệnh claude
 

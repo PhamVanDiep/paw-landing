@@ -22,9 +22,11 @@ Nếu ở **Scopes** không thấy các quyền này, bấm **Show all scopes**.
 
 ## Nhập PAT vào PAW
 
-Mở app, dán token vào ô **Personal Access Token (PAT)** và bấm **Đăng nhập**. PAT được lưu mã hóa trên máy bạn.
+PAW mở thẳng vào **Board**, không có màn hình đăng nhập. Trên thẻ **Bắt đầu sử dụng**, bước **Kết nối Azure DevOps** dẫn tới đúng chỗ nhập PAT: **Cài đặt**, trang **Tài khoản & DevOps**, mục **Tài khoản Azure DevOps**. Dán token rồi lưu; app kiểm tra PAT trước khi lưu, và PAT được lưu mã hóa trên máy bạn.
 
-Khi PAT hết hạn hoặc cần đổi, vào **Cài đặt**, mục **Tài khoản Azure DevOps**, bấm **Cập nhật PAT**.
+Khi PAT hết hạn hoặc cần đổi, quay lại mục đó và bấm **Cập nhật PAT**.
+
+Cùng trang có mục **Địa chỉ Azure DevOps**, mặc định `https://devops.evn.com.vn/EVNCollection`. Chỉ đổi khi bạn dùng server hoặc collection mặc định khác; đổi xong app kiểm tra lại PAT với địa chỉ mới.
 
 <Note>
 PAT chỉ tạo cho một collection thì PAW chỉ làm việc được với collection mặc định. Muốn theo dõi nhiều [collection](/docs/collection), hãy tạo lại PAT với **All accessible organizations**.

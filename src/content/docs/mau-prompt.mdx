@@ -1,0 +1,30 @@
+Mẫu prompt là nội dung PAW đưa cho agent khi bắt đầu một việc. Ba mẫu dùng chung cho Claude Code, Codex và Cursor.
+
+## Ba mẫu
+
+Vào **Cài đặt**, trang **Agents**, mục **Mẫu prompt**:
+
+- **Một work item**: mở đầu khi chạy một thẻ.
+- **Cả lô**: mở đầu khi chạy nhiều thẻ cùng lúc ([chạy theo lô](/docs/che-do-chay)).
+- **Kết thúc**: lời nhắn khi kết thúc việc.
+
+Để trống là dùng mặc định. Có [plugin pmis3-skills](/docs/plugin) thì mặc định là nội dung PMIS3 như trước. Không có thì là bản trung tính: tiêu đề, mô tả, link work item, không nhắc tên skill.
+
+## Biến
+
+| Mẫu | Biến dùng được |
+| --- | --- |
+| Một work item, Kết thúc | `{{id}}` `{{title}}` `{{type}}` `{{state}}` `{{url}}` `{{description}}` `{{branch}}` `{{project}}` `{{collection}}` `{{folder}}` |
+| Cả lô | `{{items}}` (danh sách đã định dạng) `{{ids}}` `{{branch}}` `{{project}}` `{{collection}}` `{{folder}}` |
+
+Bấm tên biến trong trình soạn để chèn. Mẫu dùng biến không tồn tại thì không lưu được.
+
+## Gọi skill
+
+Viết `{{skill:<tên>}}` để gọi một skill. Với Claude, PAW viết thành `Dùng skill <tên>`. Với Codex và Cursor, PAW thay bằng đường dẫn file `SKILL.md` để chúng đọc. Không tìm thấy skill thì giữ nguyên tên và ghi cảnh báo vào lịch sử của lần chạy.
+
+## Xem trước và khôi phục
+
+- **Xem trước** hiện prompt sẽ gửi với một work item mẫu, lấy item thật gần nhất nếu có.
+- **Khôi phục mặc định** bỏ mẫu của bạn.
+- Phần PAW tự thêm (skill dùng thêm bạn chọn, file bàn giao, quy tắc nhánh) luôn nối sau mẫu.

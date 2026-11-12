@@ -1,4 +1,16 @@
-PAW đọc luật workflow và công cụ Azure DevOps từ plugin này. Thiếu plugin thì app không kết nối được Azure DevOps. Chạy các lệnh sau một lần, trong terminal:
+Plugin pmis3-skills **không bắt buộc**. Không có nó, PAW vẫn kết nối Azure DevOps và chạy việc: địa chỉ DevOps nhập trong **Cài đặt**, [luật trạng thái](/docs/luat-trang-thai) tải lên từ file, và [mẫu prompt](/docs/mau-prompt) mặc định là bản trung tính không nhắc tên skill.
+
+Có plugin thì PAW tự dùng:
+
+- `azdo.config.json` làm luật trạng thái (khi bạn chưa tải lên file luật riêng).
+- `azdo.sh` để agent cập nhật work item.
+- Mẫu prompt mặc định gọi các skill của `pmis3-workflow`.
+
+Team dùng quy trình khác thì bỏ qua trang này.
+
+## Cài plugin
+
+Chạy các lệnh sau một lần, trong terminal:
 
 ```bash
 claude plugin marketplace add PhamVanDiep/pmis3-skills
@@ -13,4 +25,15 @@ Kiểm tra lại bằng lệnh:
 claude plugin list
 ```
 
-PAW tự tìm plugin, không cần khai báo gì thêm. Nếu app đang mở, bạn cũng không cần khởi động lại.
+PAW tự tìm plugin, không cần khai báo gì thêm. Nếu bạn để plugin ở chỗ khác, nhập thư mục đó ở **Cài đặt**, trang **Dự án**, mục **Luật trạng thái**.
+
+## Cập nhật plugin
+
+```bash
+claude plugin marketplace update pmis3-skills
+claude plugin update pmis3-workflow@pmis3-skills
+claude plugin update pmis3-frontend@pmis3-skills
+claude plugin update pmis3-backend@pmis3-skills
+```
+
+Hậu tố `@pmis3-skills` là bắt buộc, thiếu nó lệnh báo `Plugin not found`. Cập nhật xong thì khởi động lại Claude Code.

@@ -1,0 +1,35 @@
+Luật trạng thái cho PAW biết với từng loại work item: trạng thái nào được bắt đầu làm, khi chạy thì chuyển sang trạng thái nào, và khi xong thì chuyển sang trạng thái nào.
+
+## Nguồn luật
+
+Vào **Cài đặt**, trang **Dự án**, mục **Luật trạng thái**. Mục này cho biết nguồn đang dùng, theo thứ tự ưu tiên:
+
+1. File luật bạn tải lên.
+2. `azdo.config.json` của [plugin pmis3-skills](/docs/plugin), nếu đã cài.
+3. Chưa có luật.
+
+## Tạo file luật
+
+1. Bấm **Tải file mẫu**. File mẫu theo quy ước EVN, có phần `_help` giải thích từng trường. **Tải luật hiện tại** xuất luật đang dùng, từ bất kỳ nguồn nào, cùng định dạng.
+2. Sửa theo quy trình của team:
+   - `workflow.<Loại>`: `allowedFrom` (trạng thái được bắt đầu), `activeState` (trạng thái khi đang làm), `doneState` (trạng thái khi xong), tuỳ chọn `requirePush`.
+   - `closedStates`: các trạng thái coi là đã đóng.
+   - `collections.<tên>`: luật riêng cho từng [collection](/docs/collection).
+3. Bấm **Tải lên file luật**.
+
+File không chứa URL, PAT hay phiên bản API.
+
+## Khi tải lên
+
+- JSON hỏng, sai kiểu, thiếu trường hoặc có trường lạ là **lỗi**: PAW chỉ rõ vị trí (ví dụ `workflow.Bug.allowedFrom[2]`) và không lưu.
+- Loại work item hoặc trạng thái không có trên Azure DevOps chỉ là **cảnh báo**: file vẫn được lưu.
+
+Bấm **Xoá luật tuỳ chỉnh** để quay về nguồn kế tiếp.
+
+## Khi chưa có luật
+
+<Note>
+Thiếu luật không chặn bạn làm việc. Việc vẫn bắt đầu chạy được, chỉ bỏ bước tự chuyển sang trạng thái đang làm (thẻ ghi rõ lý do). Work item được coi là đã đóng khi ở `Done`, `Closed` hoặc `Removed`.
+</Note>
+
+Kéo thẻ sang **Đã xong** khi chưa có luật cho loại đó thì hộp thoại cho ba lựa chọn: **Cấu hình luật**, **Mở trên DevOps** để đổi tay, hoặc **Tải file mẫu**.

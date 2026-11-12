@@ -7,7 +7,9 @@ import claudeCode from "./claude-code.mdx";
 import collection from "./collection.mdx";
 import duLieuVaCapNhat from "./du-lieu-va-cap-nhat.mdx";
 import layPat from "./lay-pat.mdx";
+import luatTrangThai from "./luat-trang-thai.mdx";
 import mapThuMuc from "./map-thu-muc.mdx";
+import mauPrompt from "./mau-prompt.mdx";
 import plugin from "./plugin.mdx";
 import taoTicket from "./tao-ticket.mdx";
 import telegram from "./telegram.mdx";
@@ -28,7 +30,9 @@ export const DOC_CONTENT: Record<string, MDXContent> = {
   "collection": collection,
   "du-lieu-va-cap-nhat": duLieuVaCapNhat,
   "lay-pat": layPat,
+  "luat-trang-thai": luatTrangThai,
   "map-thu-muc": mapThuMuc,
+  "mau-prompt": mauPrompt,
   "plugin": plugin,
   "tao-ticket": taoTicket,
   "telegram": telegram,
